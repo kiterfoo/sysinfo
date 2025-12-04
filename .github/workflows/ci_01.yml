@@ -8,7 +8,7 @@ jobs:
       - name: fqdn du serveur
         run: hostnamectl
       - name: info ipv4
-        run: ip -4
+        run: hostname -I
       - name: whoiam
         run: whoami
 
