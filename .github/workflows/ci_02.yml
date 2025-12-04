@@ -1,0 +1,16 @@
+name: ci_01
+on: push
+
+jobs:
+  build-TP1:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: recup sysinfo
+        uses: actions/checkout@6 
+
+      - name: compil src/sysinfo.c
+        run: make src/sysinfo.c
+      - name: compil make
+        run: make
+
