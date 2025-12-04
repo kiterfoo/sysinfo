@@ -1,5 +1,5 @@
 name: ci_01
-on: push
+on: workflow_dispash
 
 jobs:
   info-sys:
