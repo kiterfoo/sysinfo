@@ -1,5 +1,5 @@
 name: ci_01
-on: workflow_dispash
+on: workflow_dispatch
 
 jobs:
   info-sys:
