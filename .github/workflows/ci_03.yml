@@ -12,5 +12,5 @@ jobs:
       - name: dep install
         run: pip install ifaddr pylint
       - name: exec du test
-        run: pylint --disable-missing-docstringg script/mysystem.py
+        run: pylint --disable-missing-docstring script/mysystem.py
 
