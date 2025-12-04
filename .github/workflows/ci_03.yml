@@ -6,6 +6,11 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
+      - name: compil
+        run: make build
+      - name: debug
+        run: make debug
+    steps:
       - name: recup sysinfo
         uses: actions/checkout@v6
       - name: python 3.12
