@@ -7,10 +7,13 @@ jobs:
 
     steps:
       - name: recup sysinfo
-        uses: actions/checkout@v6 
-
+        uses: actions/checkout@v6
+      - name: python 3.12
+        uses: action/setup-python@v5
+          with: 
+          python-version: '3.12'
       - name: dep install
-        run: pip install ifaddr pylint
+        run: pip install ifaddr pylint psutil
       - name: exec du test
-        run: pylint --disable=missing-docstring script/mysystem.py
+        run: pylint --disable=missing-docstring script/mysystem/mysystem.py
 
