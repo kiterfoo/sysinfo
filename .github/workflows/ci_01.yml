@@ -1,15 +1,15 @@
 name: ci_01
 on: workflow_dispatch
 
-
 jobs:
   info-sys:
     runs-on: ubuntu-latest
+    container:
+      image: python:3.10
+
     steps:
-      - name: fqdn du serveur
-        run: hostnamectl
-      - name: info ipv4
-        run: hostname -I
-      - name: whoiam
-        run: whoami
+      - name: affiche stok
+        run: lsblk
+      - name: info distro
+        run: uname -a
 
