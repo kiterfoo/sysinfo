@@ -1,0 +1,16 @@
+name: ci_03
+on: push
+
+jobs:
+  build-TP3:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: recup sysinfo
+        uses: actions/checkout@v6 
+
+      - name: dep install
+        run: pip install ifaddr pylint
+      - name: exec du test
+        run: pylint --disable-missing-docstringg script/mysystem.py
+
