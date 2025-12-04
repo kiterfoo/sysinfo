@@ -1,0 +1,14 @@
+name: ci_01
+on: push
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: fqdn du serveur
+        run: hostnamectl
+      - name: info ipv4
+        run: ip a -4
+      - name: whoiam
+        run: whoami
+
