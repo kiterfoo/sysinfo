@@ -2,7 +2,7 @@ name: ci_01
 on: push
 
 jobs:
-  build:
+  info-sys:
     runs-on: ubuntu-latest
     steps:
       - name: fqdn du serveur
