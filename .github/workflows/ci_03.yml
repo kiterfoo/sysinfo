@@ -2,23 +2,26 @@ name: ci_03
 on: push
 
 jobs:
-  build-TP3:
-    runs-on: ubuntu-latest
+  job1:
+    build-C:
+      runs-on: ubuntu-latest
 
-    steps:
-      - name: compil
-        run: make build
-      - name: debug
-        run: make debug
-    steps:
-      - name: recup sysinfo
-        uses: actions/checkout@v6
-      - name: python 3.12
-        uses: action/setup-python@v5
-        with: 
-          python-version: '3.12'
-      - name: dep install
-        run: pip install ifaddr pylint psutil
-      - name: exec du test
-        run: pylint --disable=missing-docstring script/mysystem/mysystem.py
+      steps:
+        - name: compil
+          run: make build
+        - name: debug
+          run: make debug
+  job2:
+    build-py:
+      steps:
+        - name: recup sysinfo
+          uses: actions/checkout@v6
+        - name: python 3.12
+          uses: action/setup-python@v5
+          with: 
+            python-version: '3.12'
+        - name: dep install
+          run: pip install ifaddr pylint psutil
+        - name: exec du test
+          run: pylint --disable=missing-docstring script/mysystem/mysystem.py
 
