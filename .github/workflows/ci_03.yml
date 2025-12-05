@@ -86,6 +86,6 @@ jobs:
             fi
         - name: depl_C
           uses: softprops/action-gh-release@v2
-            with:
-              files: |
-                bin/sysinfo
+          with:
+            files: |
+              bin/sysinfo
