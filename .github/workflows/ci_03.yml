@@ -79,7 +79,7 @@ jobs:
       permissions:
         contents: write
         packages: write
-      runs-on: ubuntus-latest
+      runs-on: ubuntu-latest
       steps:
         - name: Validate version tag format
           run: |
