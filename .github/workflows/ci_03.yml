@@ -64,6 +64,7 @@ jobs:
 
     C-run-sysinfo:
       runs-on: ubuntus-latest
+      needs: C-compilation-sysinfo
       steps:
         - uses: action/download-artifact@v4
           with:
