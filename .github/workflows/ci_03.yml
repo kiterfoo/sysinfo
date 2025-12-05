@@ -27,7 +27,7 @@ jobs:
             - name: Generation des attestations
               uses: actions/attest-build-provenance@v1
               with: 
-                subject-path: 'dist/app.txt'
+                subject-path: 'bin/sysinfo'
             - uses: actions/upload-artifact@v4
               with:
                 name: artefact01
