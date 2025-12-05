@@ -19,6 +19,10 @@ jobs:
               uses: actions/checkout@v6
             - name: sysinfo compilation
               run: make build
+            - uses: actions/upload-artefact@v5
+              with:
+                name: artefact01
+                path: bin/sysinfo
     
     Py-lint-mysystem:
         runs-on: ubuntu-latest
@@ -47,4 +51,14 @@ jobs:
             - name: run script
               run: |
                 pip install ifaddr psutil 
-                python script/mysystem/mysystem.py                
+                python script/mysystem/mysystem.py
+
+    C-run-sysinfo:
+      runs-on: ubuntus-latest
+      steps:
+        - uses: action/dowwnload-artefact@v5
+          with:
+            name: artefact01
+            path: bin/sysinfo
+        - name: run c-compile
+          run : make run
