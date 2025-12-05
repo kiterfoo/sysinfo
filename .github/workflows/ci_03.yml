@@ -1,6 +1,11 @@
 name: sysinfo CI
 on: push
 
+permissions:
+  id-token: write
+  contents: read
+  attestations: write
+
 jobs:
 
     C-lint-sysinfo:
@@ -19,6 +24,10 @@ jobs:
               uses: actions/checkout@v6
             - name: sysinfo compilation
               run: make build
+            - name: Generation des attestations
+              uses: actions/attest-build-provenance@v1
+              with: 
+                subject-path: 'dist/app.txt'
             - uses: actions/upload-artifact@v4
               with:
                 name: artefact01
