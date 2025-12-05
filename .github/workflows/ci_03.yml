@@ -59,6 +59,5 @@ jobs:
         - uses: action/dowwnload-artefact@v5
           with:
             name: artefact01
-            path: bin/sysinfo
         - name: run c-compile
           run : make run
